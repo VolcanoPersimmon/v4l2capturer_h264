@@ -15,7 +15,9 @@ class VideoCapturer {
       raw_buffer_subject_.UnSubscribe();
       frame_buffer_subject_.UnSubscribe();
     };
-
+    '''
+    在 C++ 中，虚函数（Virtual Function） 是一种允许子类重写（override）基类函数的成员函数，同时提供 动态多态性 的机制。虚函数是通过在函数声明前加上关键字 virtual 定义的。
+    '''
     virtual int fps() const = 0;
     virtual int width() const = 0;
     virtual int height() const = 0;

@@ -11,13 +11,15 @@
 #include "common/worker.h"
 #include "v4l2_codecs/v4l2_decoder.h"
 
-class V4l2Capturer : public VideoCapturer {
+class V4l2Capturer : public VideoCapturer { //继承自VideoCapturer
   public:
-    static std::shared_ptr<V4l2Capturer> Create(Args args);
+    static std::shared_ptr<V4l2Capturer> Create(Args args);//静态工厂方法
+    '''静态工厂方法（Static Factory Method）是一种设计模式，用于通过类的静态方法创建类的实例，而不是直接调用构造函数。它通常返回一个类的实例（可以是原始类型、智能指针、单例实例或其他派生类对象）。'''
+    //V4l2Capturer::Create它是一个 static 成员函数，属于类，而不属于某个实例。
 
     V4l2Capturer(Args args);
     ~V4l2Capturer();
-    int fps() const override;
+    int fps() const override; //override :重写了基类中的虚函数
     int width() const override;
     int height() const override;
     bool is_dma_capture() const override;
